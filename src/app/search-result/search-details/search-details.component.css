@@ -1,0 +1,225 @@
+.navbar_text {
+	color: #5121ff;
+	font-weight: bold;
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	cursor: pointer;
+	padding: 7px;
+}
+.navbar_text:hover {
+	background-color: #f3f2f7;
+}
+.company-logo {
+width: 150px;
+height: 50px;
+	text-align: center;
+}
+.company_title {
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	cursor: pointer;
+	color: #00355F;
+	font-size: 28px;
+	font-weight: bold;
+}
+.navbar {
+	padding-top: 10px;
+	border: 2px solid #E0E0E0;
+}
+.image_container {
+	height: 450px;
+	background-image: url(https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKDTmOzgbRABGAEyCJZ7Qu9MHOfK);
+	background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 2%;
+	padding-bottom: 2%;
+	width: 100%;
+  /*background-position: center;*/
+}
+.flight_details {
+	background-color: #0c182d;
+	height: 100%;
+	/* opacity: 0.7;
+    filter: alpha(opacity=70);*/
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;	
+        padding-top: 1%;
+}
+.title {
+	padding-top: 13px;
+}
+.input_label {
+	color: #C4C4C4;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+
+}
+
+span.input-group-text {
+	background-color: white; 
+	border: none;
+
+}
+
+.btn-warning {
+	color: #8C7000;
+	font-weight: bold;
+}
+.more_options {
+	font-size: 11px;
+}
+
+
+.showDivSmall{
+	display: none;
+}
+.website_details {
+	background-color: #220340;
+}
+.website_header {
+	color: white;
+	font-family: 'Nunito', sans-serif;
+}
+.website_image {
+	background-repeat: no-repeat;
+     background-size: cover;
+  background-position: center;
+  height: 200px;
+  margin: 5px;
+      position:relative;
+      border-radius: 6px;
+}
+.image_text {
+	color: white;
+	 position: absolute;
+	  bottom: 0; 
+	  padding: 5px;
+	  font-weight: bold;
+	  width: 100%;
+	  background-color: #6fa3f2;
+	font-family: 'Nunito', sans-serif;
+
+
+}
+.ticket_container{
+	margin: 10px;
+	background-color: white;
+	border-radius: 5px;
+}
+.flight_name {
+	color: #bbbfc1;
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+	padding-left: 5px;
+	font-weight: bold;
+}
+.flight_name_green {
+	font-family: 'Nunito', sans-serif;
+	font-size: 12px;
+	color: #8eea54;
+	line-height: 0px;
+	padding-left: 5px;
+}
+.price_tag {
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	color: #0D2F55;
+	padding-top: 15px;
+	font-weight: bold;
+}
+.btn-danger {
+	margin-top: 7px;
+}
+.flight_info {
+	padding-top: 10px;
+}
+.source {
+	font-family: 'Nunito', sans-serif;
+	font-size: 18px;
+	color: #0D2F55;
+	font-weight: bold;	
+}
+.source_time {
+	font-size: 14px;
+	font-family: 'Nunito', sans-serif;
+	color: #b7cecc;
+}
+.duration {
+	font-size: 12px;
+	padding-top: 10px;
+	border-bottom: 2px solid #b7cecc;
+}
+.sort_by {
+	color: white;
+	font-size: 16px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	padding-top: 20px;
+}
+.sort_by_list > li{
+	color: white;
+	font-size: 14px;
+	font-family: 'Nunito', sans-serif;
+		list-style: none;
+	padding-top: 5px;
+}
+.sort_by_list {
+	padding-bottom: 15px;
+	border-bottom: 1px solid white; 
+
+}
+.range_slider {
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+
+	font-family: 'Nunito', sans-serif;
+
+}
+.sort_filter {
+	height: 100%; 
+	background-color: #300257;
+}
+.btn-info {
+	background-color: #300257;
+}
+.sort_filter_button {
+
+	 display: none;
+}
+@media (max-width: 450px) {
+	.image_container {
+		height: 550px;
+	}
+	.btn-lg {
+		width: 100%;
+		text-align: center;
+	}
+	.hideDivSmall{
+		display: none;
+	}
+	.showDivSmall {
+	display: inline-block;
+	}
+
+.showDiv {
+	display: block;
+	padding: 5px;
+ }
+.showDivSmall:hover {
+	background-color:  #f3f2f7;
+}
+.sort_filter {
+	display: none;
+}
+.sort_filter_button {
+	margin-left: 35%;
+	 margin-top: 5px;
+	 display: block;
+}
+}
+
+
+/*AIr India https://cdn1.momondo.net/logos/airlines/ai.png*/
+/*Jet Airways https://cdn1.momondo.net/logos/airlines/9w.png*/
+/*Indigo https://cdn1.momondo.net/logos/airlines/6e.png*/

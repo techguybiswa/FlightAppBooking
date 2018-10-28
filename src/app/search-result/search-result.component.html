@@ -1,0 +1,169 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<div class="row navbar">
+    
+    <div class="col-md-1 navbar_text hideDivSmall">
+    </div>
+    <div class="col-md-2 title">
+        <p class="company_title" >
+            AirTraveller.com <i class="fas fa-bars showDivSmall" (click)="showMenu()"></i>
+        </p>
+    </div>
+    <div class="col-md-4 ">
+    </div>
+    <div class="col-md-1 navbar_text hideDivSmall " [ngClass]="{'showDiv': flag==1}">
+        Account
+    </div>
+    <div class="col-md-1 navbar_text hideDivSmall " [ngClass]="{'showDiv': flag==1}">
+        My List <span class="badge badge-danger">04</span>
+    </div>
+
+    <div class="col-md-1 navbar_text hideDivSmall " [ngClass]="{'showDiv': flag==1}">
+        My Trips <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <div class="col-md-1 navbar_text hideDivSmall " [ngClass]="{'showDiv': flag==1}">
+        Support <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="col-md-1  ">
+        &nbsp;
+    </div>
+</div>
+<div class="image_container"  *ngIf="!view">
+    <div class="container flight_details">
+        <br>
+        <div class="flight_info">
+            <div class="btn-group btn-group-toggle">
+                <label class="btn-primary " ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.left"> One Way
+  </label>
+                <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Two Way
+  </label>
+                <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.right"> Multi City
+  </label>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="basic-url_1" class="input_label">Flying From</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3"><img src="https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/location-512.png" height=20 width=20></span>
+                            </div>
+                            <input type="text" class="form-control" id="basic-url_1" aria-describedby="basic-addon3" placeholder="Where will you be flying from?" [(ngModel)]="fromLoc" [ngbTypeahead]="search">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="basic-url_2" class="input_label">Flying To</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3"><img src="https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/location-512.png" height=20 width=20></span>
+                            </div>
+                            <input type="text" class="form-control" id="basic-url_2" aria-describedby="basic-addon3" placeholder="Where will you fly to?" [(ngModel)]="toLoc" [ngbTypeahead]="search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="basic-url_2" class="input_label">Date</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb2X-rov0W76NdyyyIcfuzblRGamMmLk_3pCIr6Gx-28e2PgGZ" height=20 width=20></span>
+                    </div>
+                    <input type="Date" class="form-control" id="basic-url_2" aria-describedby="basic-addon3" placeholder="Where will you fly to?"  [(ngModel)]="dateTravel">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="basic-url_4" class="input_label">Passenger Details</label>
+
+                <div class="input-group mb-3">
+                    <input type="Number" class="form-control" id="basic-url_4" aria-describedby="basic-addon3" placeholder="Adults" [(ngModel)]="peopleCount">
+
+                    <input type="Number" class="form-control" id="basic-url_4" aria-describedby="basic-addon3" placeholder="Children">
+                </div>
+            </div>
+        </div>
+        <a href="#" class="more_options"> Advanced Options <i class="fas fa-chevron-down"></i></a> 
+        <br>
+        <button class="btn btn-warning btn-lg" (click)="showResult()" >Search</button>
+    </div>
+</div>
+<app-search-details  *ngIf="view" [destinationTo]= destinationFrom [destinationFrom]= destinationTo></app-search-details>
+<div class="website_details"  *ngIf="!view">
+    <br>
+    <h2 class="text text-center website_header"><b>Explore The World</b></h2>
+    <h6 class="text text-center website_header"><i>Buy a ticket and explore out the world around you</i></h6>
+
+    <br>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(https://metrouk2.files.wordpress.com/2018/01/517972764.jpg?w=748&h=498&crop=1);">    
+        <h5 class="image_text">Malayasia Dairies</h5>
+
+        </div>
+        </div>
+       
+           <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(https://www.lastminute.com/hotels/img/city/New-York-NY-US.jpg);">
+        <h5 class="image_text">Experience New York</h5>
+            
+        </div>
+        </div>
+        <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(http://travelzom.com/wp-content/uploads/2017/06/bali-indonesia-2.jpg);">
+        <h5 class="image_text">Beaches of Bali</h5>
+
+            
+        </div>
+        </div>
+          <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1495143554/sydney-australia-01-WBANSOPCITY17.jpg?itok=B00b-i45);">
+        <h5 class="image_text">Awestruck at  Australia</h5>
+            
+        </div>
+        </div>
+    </div>
+    <br>
+        <div class="row"  *ngIf="!view">
+        <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(https://hawaiistateparks.org/wp-content/uploads/2016/07/relax_hawaii.jpg);">    
+        <h5 class="image_text">Hawaii Beaches</h5>
+
+        </div>
+        </div>
+       
+           <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(https://www.nationalgeographic.com/content/dam/adventure/photos/2017/stories/amazing-iceland-adventures/Iceland-mount-Kirkjufell-aurora.jpg);">
+        <h5 class="image_text">Chilled Iceland</h5>
+            
+        </div>
+        </div>
+        <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5230017886001_5219431537001-vs.jpg?pubId=5104226627001&videoId=5219431537001);">
+        <h5 class="image_text">Fun Filled Bangkok</h5>
+
+            
+        </div>
+        </div>
+          <div class="col-md-3">
+             <div class=" website_image "  style="background-image: url(https://www.thelocal.de/userdata/images/article/cfac492928c6477744187a74e347d5859acc823c9df57947a9f93430c17b3b8a.jpg);">
+        <h5 class="image_text">Christmas at Germany</h5>
+            
+        </div>
+        </div>
+    </div>
+    <br><br>     
+    </div>
+   
+</div>

@@ -1,0 +1,228 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+<div style="background-color: #220340">
+	<br>
+	<div class=" container website_details">
+	<div class="row">
+		<div class="col-md-3 sort_filter" >
+			<p class="text sort_by">Sort by: </p>
+
+			<ul class="sort_by_list">
+				<li (click)="sortList('Duration')"><input type="radio" name="radiogroup" > Duration</li>
+				<li (click)="sortList('Arrival')"><input type="radio" name="radiogroup"> Arrival</li>
+				<li (click)="sortList('Departure')"><input type="radio" name="radiogroup"> Departure</li>
+<!-- 				<li (click)="sortList(`Seats`)"><input type="radio" name="radiogroup"> No of seats</li>
+ -->				<li (click)="sortList('Price')"><input type="radio" name="radiogroup"> Price for sort</li>
+			</ul>
+			<p class="text sort_by">Filters: </p>
+			<p class="text sort_by">Price Slider </p>
+
+			<span class="range_slider">Min:5000</span>
+  			<input type="range" min="5000" max="10000" value="10000"  [(ngModel)]="price"  (change)="showPrice(price)">
+			<span class="range_slider">Max:10000</span>
+			<br>
+			<span *ngIf="showVal" class="range_slider">Price: {{price}} INR</span>
+			<p class="text sort_by">Duration: </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="duration" > Less than 2 hours</li>
+				<li><input type="checkbox" name="radiogroup" id="duration" > 2-3 hours</li>
+				<li><input type="checkbox" name="radiogroup" id="duration" > More than 3 hours</li>
+			</ul>
+			<p class="text sort_by">Airline </p>
+			<ul class="sort_by_list">
+				<li><input type="radio" name="radiogroup" id="airline" (click)="filterAirline('Air India')"> AirIndia </li>
+				<li><input type="radio" name="radiogroup" id="airline" (click)="filterAirline('Jet Airways')"> Jet Airways</li>
+				<li><input type="radio" name="radiogroup" id="airline" (click)="filterAirline('Indigo')"> Indigo</li>
+
+			</ul>
+				<p class="text sort_by">Arrival </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Early Morning (00:00-3:59) </li>
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Morning (4:00-11:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Afternoon (12:00-17:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Evening (18:00-11:59)</li>
+			</ul>
+				<p class="text sort_by">Departure </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="dept"> Early Morning (00:00-3:59) </li>
+				<li><input type="checkbox" name="radiogroup" id="dept"> Morning (4:00-11:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="dept"> Afternoon (12:00-17:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="dept"> Evening (18:00-11:59)</li>
+			</ul>
+	
+
+
+
+
+		</div>
+		<div class="col-md-6 " style="height: 100%; ">
+			<div class="row">
+				
+					<div class="sort_filter_button">
+					<button class="btn btn-info " (click)="open_sort(content)">Sort</button>
+				
+					<button class="btn btn-info" (click)="open_filter(content_filter)">Filter</button>
+
+
+
+					<ng-template #content let-c="close" let-d="dismiss" >
+<div style="background-color: #300257; padding-left: 10px;">
+	  <p class="text sort_by">Sort by: </p>
+
+				<ul class="sort_by_list">
+				<li (click)="sortList('Duration')"><input type="radio" name="radiogroup" > Duration</li>
+				<li (click)="sortList('Arrival')"><input type="radio" name="radiogroup"> Arrival</li>
+				<li (click)="sortList('Departure')"><input type="radio" name="radiogroup"> Departure</li>
+<!-- 				<li (click)="sortList(`Seats`)"><input type="radio" name="radiogroup"> No of seats</li>
+ -->				<li (click)="sortList('Price')"><input type="radio" name="radiogroup"> Price</li>
+			</ul>
+			</div>
+			 <button type="button" class="btn btn-info " (click)="c('Close click')">Done</button>
+
+
+</ng-template>
+
+
+					<ng-template #content_filter let-c="close" let-d="dismiss" >
+<div style="background-color: #300257; padding-left: 10px;">
+	  
+
+<p class="text sort_by">Filters: </p>
+			<p class="text sort_by">Price Slider </p>
+
+			<span class="range_slider">Min:5000</span>
+  			<input type="range" min="5000" max="10000" value="10000"  [(ngModel)]="price"  (change)="showPrice(price)">
+			<span class="range_slider">Max:10000</span>
+			<br>
+			<span *ngIf="showVal" class="range_slider">Price: {{price}} INR</span>
+			<p class="text sort_by">Duration: </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="duration"> Less than 2 hours</li>
+				<li><input type="checkbox" name="radiogroup" id="duration"> 2-3 hours</li>
+				<li><input type="checkbox" name="radiogroup" id="duration"> More than 3 hours</li>
+			</ul>
+			<p class="text sort_by">Airline </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="airline" (click)="filterAirline('Air India')"> AirIndia </li>
+				<li><input type="checkbox" name="radiogroup" id="airline" (click)="filterAirline('Jet Airways')"> Jet Airways</li>
+				<li><input type="checkbox" name="radiogroup" id="airline" (click)="filterAirline('Indigo')"> Indigo</li>
+
+			</ul>
+				<p class="text sort_by">Arrival </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Early Morning (00:00-3:59) </li>
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Morning (4:00-11:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Afternoon (12:00-17:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="arrv"> Evening (18:00-11:59)</li>
+			</ul>
+				<p class="text sort_by">Departure </p>
+			<ul class="sort_by_list">
+				<li><input type="checkbox" name="radiogroup" id="dept"> Early Morning (00:00-3:59) </li>
+				<li><input type="checkbox" name="radiogroup" id="dept"> Morning (4:00-11:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="dept"> Afternoon (12:00-17:59)</li>
+				<li><input type="checkbox" name="radiogroup" id="dept"> Evening (18:00-11:59)</li>
+			</ul>
+			</div>
+			 <button type="button" class="btn btn-info " (click)="c('Close click')">Done</button>
+
+
+</ng-template>
+
+					</div>
+
+
+
+			</div>
+	<!-- 		<input type="text" name="" [(ngModel)]="nameSearch">
+			<input type="text" name="" [(ngModel)]="emailSearch">
+
+			<input type="text" name="" [(ngModel)]="duration" placeholder="Duration">
+<<<<<<< HEAD
+			{{duration}}-->
+			  
+		<div class="container ticket_container"  *ngFor="let item of flightData | orderBy: order " >
+
+			<!-- |  personSearch: nameSearch:price:duration  -->
+			<div *ngIf="item.From==fromFlight && item.To==toFlight" >
+				
+					<div class="row flight_info text-center">
+					<div class="col-md-1">
+						<img src="https://cdn1.momondo.net/logos/airlines/ai.png">
+					</div>
+					<div class="col-md-4 " >
+						<p class="flight_name">{{item.Airline}}</p>
+						<p class="flight_name_green"> Get Rs 450 cashback </p>
+					</div>
+					<div class="col-md-1 " >
+					</div>
+					<div class="col-md-3 " >
+						<p class="price_tag">{{item.Price}} INR</p>
+					</div>
+					<div class="col-md-2 " >
+						<button class="btn btn-danger"> Buy Now </button>
+					</div>
+				</div>
+				<div class="row flight_info text-center">
+					<div class="col-md-2">
+						
+					</div>
+
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-4">
+								<p class="source">{{item.From}} <span class="source_time">{{item.Departure}}</span> </p>
+
+							</div>
+							<div class="col-md-4">
+								<p class="duration">{{item.Duration}}</p>
+								
+							</div>
+							<div class="col-md-4">
+								<p class="source">{{item.To}} <span class="source_time">{{item.Arrival}}</span> </p>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+
+					<div class="col-md-2">
+						
+					</div>
+				</div>
+			</div>
+								
+			</div>
+
+		</div>
+		<div class="col-md-3 " style="height: 100%;">
+			    <div>
+             <div class=" website_image "  style="background-image: url(http://travelzom.com/wp-content/uploads/2017/06/bali-indonesia-2.jpg);">
+        <h5 class="image_text">Beaches of Bali</h5>
+
+            
+        </div>
+        </div>
+             <div class=" website_image "  style="background-image: url(https://www.nationalgeographic.com/content/dam/adventure/photos/2017/stories/amazing-iceland-adventures/Iceland-mount-Kirkjufell-aurora.jpg);">
+        <h5 class="image_text">Chilled Iceland</h5>
+            
+        </div>
+         <div class=" website_image "  style="background-image: url(https://metrouk2.files.wordpress.com/2018/01/517972764.jpg?w=748&h=498&crop=1);">    
+        <h5 class="image_text">Malayasia Dairies</h5>
+
+        </div>
+        <div class=" website_image "  style="background-image: url(https://www.thelocal.de/userdata/images/article/cfac492928c6477744187a74e347d5859acc823c9df57947a9f93430c17b3b8a.jpg);">
+        <h5 class="image_text">Christmas at Germany</h5>
+            
+        </div>
+		</div>
+	</div>
+</div>
+</div>
+
+<h1>{{title}}</h1>
+
+
+<!-- http://pastebin.com/v1nF9GUr -->
